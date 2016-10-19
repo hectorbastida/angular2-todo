@@ -1,0 +1,10 @@
+<div>
+	<h4 class="mdl-card__title-text">Add new todo</h4>
+	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+		<input class="mdl-textfield__input" type="text" #addMessageInput>
+		<label class="mdl-textfield__label" for="sample3">Content</label>
+	</div>
+	<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored" (click)="addMessage(addMessageInput.value, addMessageInput)">
+	  Add
+	</button>
+</div>

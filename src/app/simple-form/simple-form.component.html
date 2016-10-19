@@ -1,0 +1,25 @@
+<div>
+	<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" [attr.for]="'checked-' + index"
+	style="display: inline;padding: 5px 15px 0 10px;">
+	  <input type="checkbox" [id]="'checked-' + index" class="mdl-checkbox__input" 
+	  [attr.checked]="todo.checked ? 'checked' : null" (click)="toggleChecked(index)">
+	</label>
+	<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+		<input class="mdl-textfield__input" type="text" #contentInput [value]="todo.content" 
+		[attr.disabled]="todo.checked ? 'disabled' : null">
+		<label class="mdl-textfield__label" for="sample3">Content</label>
+	</div>
+	<button [id]="'edit-todo-' + index" [attr.disabled]="todo.checked ? 'disabled' : null" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored" (click)="updateMessage(contentInput.value, index, contentInput)">
+	  <i class="material-icons">mode_edit</i>
+	</button>
+	<div class="mdl-tooltip mdl-tooltip--top" [attr.data-mdl-for]="'edit-todo-' + index">
+	Save edit
+	</div>
+	<button [id]="'delete-todo-' + index" [attr.disabled]="todo.checked ? 'disabled' : null" class="mdl-button mdl-js-button mdl-button--icon mdl-button--colored" (click)="deleteMessage(index, contentInput)">
+	  <i class="material-icons">delete</i>
+	</button>
+	<div class="mdl-tooltip mdl-tooltip--top" [attr.data-mdl-for]="'delete-todo-' + index">
+	Delete
+	</div>
+	<span>{{index + 1}}</span>
+</div>
